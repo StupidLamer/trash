@@ -1,9 +1,7 @@
 class Person(object):
 	"""Class of human"""
 
-	name = 'John'
-
-	def __init__(self, name):
+	def __init__(self, name, age):
 		self.name = name
 		self.__age = 20
 
@@ -25,3 +23,17 @@ class Person(object):
 		else:
 			print('Wrong age')
 
+class Employee(Person):
+	"""docstring for Employee"""
+	
+	def __init__(self, name, age, company):
+		super().__init__(name, age)
+		self.company = company
+	
+	def more_info(self):
+		print(f'{self.name} works in {self.company}')
+
+	def __str__(self):
+		return Person.__name__
+		
+		
